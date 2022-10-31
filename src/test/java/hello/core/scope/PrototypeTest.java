@@ -17,6 +17,7 @@ public class PrototypeTest {
         PrototypeBean prototypeBean2 = ac.getBean(PrototypeBean.class);
 
         Assertions.assertThat(prototypeBean1).isNotSameAs(prototypeBean2);
+        ac.close();
     }
 
     @Scope("prototype")
