@@ -12,8 +12,31 @@ repositories {
 	mavenCentral()
 }
 
+// lombok start
+configurations {
+	compileOnly{
+		extendsFrom annotationProcessor
+	}
+}
+// lombok end
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+
+	// java standard inject
+	implementation 'javax.inject:javax.inject:1'
+
+	// web lib
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// lombok start
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	// lombok end
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
